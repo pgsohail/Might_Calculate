@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/reset.css')}}">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: row;
+            background-color: gray;
+            margin: auto;
+            /* padding: 10px 10px; */
+        }
+        
+        .item{
+            width: 100%;
+            /* height: 250px;
+            max-height: 250px; */
+            display: flex;
+            margin: 10px 10px;
+        }
+        .item1{
+            background-color: #faa;
+            flex-direction: column;
+        }
+        .item2{
+            background-color: #aaf;
+        }
+        .item3{
+            background-color: #afa;
+        }
+
+        .small_item{
+            display: flex;
+            background-color: greenyellow;
+            margin: 10px 0;
+        }
+
+        .zz{
+            background-color: sandybrown;
+        }
+
+        @media screen and (max-width: 768px){
+            .wrap{
+                flex-direction: column;
+                align-items: center;
+            }
+            .item{
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrap zz">
+        <h1>title</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quod nesciunt accusantium recusandae. Assumenda cum in veritatis accusamus voluptatem! Adipisci.</p>
+    </div>
+
+    <div class="wrap">
+        <div class="item item1">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
+            <div class="small_item aa">
+                <h1 style="display: block;color:red;">title</h1>
+                <p style="display: block;color: saddlebrown;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, perferendis cum? Autem harum maxime saepe sed laborum sit fugiat eum?</p>
+            </div>
+            <div class="small_item bb">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.
+            </div>
+            <div class="small_item cc">
+                <div style="overflow:scroll;height:60px;overflow-X:hidden;">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.
+                </div>
+            </div>
+        </div>
+        <div class="item item2">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
+
+        </div>
+        <div class="item item3">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
+
+        </div>
+    </div>
+</body>
+</html>
