@@ -92,6 +92,13 @@
         text-align: right;
       }
 
+      .btn-styled {
+        font-size: 14px;
+        margin: 8px;
+        padding: 0 10px;
+        line-height: 2;
+     }
+
       @media screen and (max-width: 768px){
         .wrap{
           flex-direction: column;
@@ -212,9 +219,11 @@
       </div>
       <div class="item item3">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
-        <input type="number" min="0" max="10" maxlength="10" size="10"><br>
+        <!-- <input type="number" min="0" max="10" maxlength="10" size="10"><br>
         <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
-        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
+        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br> -->
+        
+        <div id="container_test"></div>
       </div>
     </div>
 
@@ -230,6 +239,11 @@
         // comment
         $('.adv').click(function () {
           $('.adv').css({'background-image':'url(../static/img/test.png)', })
+        })
+
+        $('#container_test').append('<button class="btn-styled" type="button" id="gen_button">Press me</button>')
+        $('#gen_button').click(function () {
+          alert('hi')
         })
       })
     </script>
