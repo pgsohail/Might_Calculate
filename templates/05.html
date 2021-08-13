@@ -36,6 +36,7 @@
       }
       .item2{
         background-color: #aaf;
+        flex-direction: column;
       }
       .item3{
         min-width: 400px;
@@ -92,7 +93,7 @@
         text-align: right;
       }
 
-      .btn-styled {
+      .gen_button {
         font-size: 14px;
         margin: 8px;
         padding: 0 10px;
@@ -215,7 +216,8 @@
       <div class="item item2">
         <div style="overflow:scroll;height:60px;overflow-X:hidden;">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.
-      </div>
+        </div>
+        <div id="container_test"></div>
       </div>
       <div class="item item3">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
@@ -223,7 +225,7 @@
         <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
         <input type="number" min="0" max="NaN" maxlength="10" size="10"><br> -->
         
-        <div id="container_test"></div>
+        
       </div>
     </div>
 
@@ -241,8 +243,8 @@
           $('.adv').css({'background-image':'url(../static/img/test.png)', })
         })
 
-        $('#container_test').append('<button class="btn-styled" type="button" id="gen_button">Press me</button>')
-        $('#gen_button').click(function () {
+        $('#container_test').append('<button class="gen_button" type="button">Press me</button>')
+        $('.gen_button').click(function () {
           alert('hi')
         })
       })
