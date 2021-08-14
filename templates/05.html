@@ -8,46 +8,60 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Might Calculator</title>
 
     <style>
+      body{
+        margin-top: 10px;
+      }
+      .mybtn{
+        transition-duration: 0.5s;
+      }
+      .mybtn:hover{
+        background-color: rgb(140, 140, 140);
+      }
+
       .wrap{
         width: 100%;
         max-width: 1600px;
         display: flex;
         flex-direction: row;
-        background-color: gray;
+        background-color: white;
         margin: auto;
-        /* padding: 10px 10px; */
       }
       
       .item{
-        /* width: 100%; */
-        /* height: 250px; */
-        /* max-height: 250px; */
         display: flex;
-        margin: 10px 10px;
+        margin: 5px 5px;
+        background-color: rgb(240, 240, 240);
       }
       .item1{
-        min-width: 600px;
-        max-width: 600px;
-        background-color: #faa;
+        min-width: 560px;
+        max-width: 560px;
         flex-direction: column;
+        background-color: white;
       }
       .item2{
-        background-color: #aaf;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px 15px;
       }
       .item3{
         min-width: 400px;
         max-width: 400px;
-        background-color: #afa;
         flex-direction: column;
+        padding: 15px 15px;
       }
 
-      .small_item{
-        /* display: flex; */
-        background-color: greenyellow;
-        margin: 10px 0;
+      .item1_wrap{
+        background-color: rgb(240, 240, 240);
+        padding: 15px 15px;
+      }
+      .aa{
+        margin-bottom: 10px;
+      }
+      .bb{
+        margin-bottom: 10px;
       }
 
       .non_wp{
@@ -60,20 +74,25 @@
         justify-content: space-around;
         margin: 5px 0;
       }
-      .rst_btn{
-        margin: 5px 0;
-      }
       .unit{
         display: flex;
         flex-direction: column;
       }
 
       .btn_pic{
-        background-color: rgb(202, 202, 202);
+        background-color: rgb(200, 200, 200);
         background-size: 100% 100%;
         padding: 30px 30px;
-        margin-bottom: 3px;
         border: 0;
+      }
+      .btn_max{
+        text-align: center;
+        border: none;
+        background-color: rgb(200, 200, 200);
+        font-size: 10px;
+        font-weight: bold;
+        width: 60px;
+        height: 20px;
       }
       .adv{
         background-image: url("../static/img/blank_adv.png");
@@ -92,12 +111,107 @@
         text-align: right;
       }
 
-      .btn-styled {
-        font-size: 14px;
-        margin: 8px;
-        padding: 0 10px;
-        line-height: 2;
-     }
+
+      .gen_container{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 2.5px;
+        margin-top: 5px;
+        border-radius: 2px;
+        background-color: rgb(200, 200, 200)
+      }
+      .gen_btn{
+        width: 100%;
+        height: 30px;
+        margin: 0 2.5px;
+        box-sizing: border-box;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-origin: content-box;
+        background-position: center;
+        background-color: rgb(240, 240, 240);
+        padding: 5px;
+        border: none;
+        border-radius: 2px;
+      }
+      #gen_rarity_3{
+        background-image: url("../static/img/Icon_Rarity_3.png");
+      }
+      #gen_rarity_4{
+        background-image: url("../static/img/Icon_Rarity_4.png");
+      }
+      #gen_rarity_5{
+        background-image: url("../static/img/Icon_Rarity_5.png");
+      }
+
+
+      #gen_element_fire{
+        background-image: url("../static/img/Icon_Element_Flame.png");
+      }
+      #gen_element_water{
+        background-image: url("../static/img/Icon_Element_Water.png");
+      }
+      #gen_element_wind{
+        background-image: url("../static/img/Icon_Element_Wind.png");
+      }
+      #gen_element_light{
+        background-image: url("../static/img/Icon_Element_Light.png");
+      }
+      #gen_element_shadow{
+        background-image: url("../static/img/Icon_Element_Shadow.png");
+      }
+
+
+      #gen_weapon_sword{
+        background-image: url("../static/img/Icon_Weapon_Sword.png");
+      }
+      #gen_weapon_blade{
+        background-image: url("../static/img/Icon_Weapon_Blade.png");
+      }
+      #gen_weapon_dagger{
+        background-image: url("../static/img/Icon_Weapon_Dagger.png");
+      }
+      #gen_weapon_axe{
+        background-image: url("../static/img/Icon_Weapon_Axe.png");
+      }
+      #gen_weapon_lance{
+        background-image: url("../static/img/Icon_Weapon_Lance.png");
+      }
+      #gen_weapon_bow{
+        background-image: url("../static/img/Icon_Weapon_Bow.png");
+      }
+      #gen_weapon_wand{
+        background-image: url("../static/img/Icon_Weapon_Wand.png");
+      }
+      #gen_weapon_staff{
+        background-image: url("../static/img/Icon_Weapon_Staff.png");
+      }
+      #gen_weapon_manacaster{
+        background-image: url("../static/img/Icon_Weapon_Manacaster.png");
+      }
+
+
+      .gen_adv_container_wrap{
+        background-color: rgb(200, 200, 200);
+        margin-top: 10px;
+      }
+      .gen_adv_container{
+        display: flex;
+        background-color: rgb(200, 200, 200);
+        margin: 5px;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 450px;                 /* 對其左右的高度 */
+      }
+      .gen_adv{
+        background-color: rgb(240, 240, 240);
+        cursor: pointer;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        height: 60px;
+      }
 
       @media screen and (max-width: 768px){
         .wrap{
@@ -115,7 +229,7 @@
 
     <div class="wrap">
       <div class="item item1">
-        <div class="small_item aa">
+        <div class="item1_wrap aa">
           <h3>Saved Sets</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.</p>
           
@@ -132,6 +246,7 @@
 
           <form class="form-inline">
             <div class="form-group m-1">
+              <!-- ?? -->
               <label class="sr-only">Set name</label>
               <input type="text" class="form-control" placeholder="Set name">
             </div>
@@ -139,59 +254,59 @@
           </form>
 
         </div>
-        <div class="small_item bb">
+        <div class="item1_wrap bb">
           <h3>Build</h3>
           <div class="build_item">
             <div class="non_wp">
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic adv"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic adv mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic weapon"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic weapon mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic dragon"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic dragon mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
             </div>
             <div class="is_wp">
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
               <div class="unit">
-                <div class="unit_pic"><button class="btn_pic wp"></button></div>
-                <div class="unit_max"><button type="button" class="btn btn-primary">MAX</button></div>
+                <div class="unit_pic"><button class="btn_pic wp mybtn"></button></div>
+                <div class="unit_max"><button type="button" class="btn_max mybtn">MAX</button></div>
               </div>
             </div>
-            <div class="rst_btn">
-              <button type="button" class="btn btn-primary" style="width: 100%;">RESET</button>
+            <div class="rst_btn" style="margin-top: 10px;">
+              <button type="button" class="btn_max mybtn" style="width: 100%;height: 30px;">RESET</button>
             </div>
           </div>
         </div>
-        <div class="small_item cc">
+        <div class="item1_wrap cc">
           <h3>Calculated Stats</h3>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
           <table class="table-sm" style="width: 100%;">
@@ -213,17 +328,46 @@
         </div>
       </div>
       <div class="item item2">
-        <div style="overflow:scroll;height:60px;overflow-X:hidden;">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.it amet consectetur adipisicing elit. Vitae, suscipit.
-      </div>
+        <h3>Item</h3>
+        <div class="gen_rarity_container gen_container"></div>
+        <div class="gen_element_container gen_container">
+          <button class="gen_btn mybtn" id="gen_element_fire"></button>
+          <button class="gen_btn mybtn" id="gen_element_water"></button>
+          <button class="gen_btn mybtn" id="gen_element_wind"></button>
+          <button class="gen_btn mybtn" id="gen_element_light"></button>
+          <button class="gen_btn mybtn" id="gen_element_shadow"></button>
+        </div>
+        <div class="gen_weapon_container gen_container">
+          <button class="gen_btn mybtn" id="gen_weapon_sword"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_blade"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_dagger"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_axe"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_lance"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_bow"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_wand"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_staff"></button>
+          <button class="gen_btn mybtn" id="gen_weapon_manacaster"></button>
+        </div>
+        <div class="gen_adv_container_wrap">
+          <div class="gen_adv_container"></div>
+        </div>
       </div>
       <div class="item item3">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!
-        <!-- <input type="number" min="0" max="10" maxlength="10" size="10"><br>
-        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
-        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br> -->
+        <h3>Halidom</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste sint consequuntur ex eius beatae odit facilis debitis aperiam excepturi nihil!</p>
         
-        <div id="container_test"></div>
+        <div class="switch_wrap gen_container" style="margin-bottom: 20px;">
+          <button class="gen_btn mybtn" id="switch_1">switch 1</button>
+          <button class="gen_btn mybtn" id="switch_2">switch 2</button>
+          <button class="gen_btn mybtn" id="switch_3">switch 3</button>
+          <button class="gen_btn mybtn" id="switch_4">switch 4</button>
+        </div>
+
+        <input type="number" min="0" max="10" maxlength="10" size="10"><br>
+        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
+        <input type="number" min="0" max="NaN" maxlength="10" size="10"><br>
+        
+        
       </div>
     </div>
 
@@ -241,10 +385,82 @@
           $('.adv').css({'background-image':'url(../static/img/test.png)', })
         })
 
-        $('#container_test').append('<button class="btn-styled" type="button" id="gen_button">Press me</button>')
-        $('#gen_button').click(function () {
+        /* for loop gen and add mouse click event */
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        $('.gen_adv_container').append('\
+          <div class="gen_adv mybtn">\
+            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+            <div class="adv_name" style="margin:5px;">Addis</div>\
+          </div>\
+        ')   
+        
+        $('.gen_adv').click(function () {
+          alert('this is gen_adv')
+        })
+
+        $('.gen_rarity_container').append('\
+          <button class="gen_btn mybtn" id="gen_rarity_3"></button>\
+          <button class="gen_btn mybtn" id="gen_rarity_4"></button>\
+          <button class="gen_btn mybtn" id="gen_rarity_5"></button>\
+        ')                       /* 會動態變動button數量 */
+
+        $('.mybtn').click(function () {
           alert('hi')
         })
+
       })
     </script>
 
