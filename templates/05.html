@@ -227,6 +227,7 @@
   </head>
   <body>
 
+    {{user_cookies}}
     <div class="wrap">
       <div class="item item1">
         <div class="item1_wrap aa">
@@ -349,7 +350,14 @@
           <button class="gen_btn mybtn" id="gen_weapon_manacaster"></button>
         </div>
         <div class="gen_adv_container_wrap">
-          <div class="gen_adv_container"></div>
+          <div class="gen_adv_container">
+            {% for hero in heros %}
+            <div class="gen_adv mybtn">
+              <img src="../static/img/adventure_tmp/{{hero.file_name}}" style="width:60px;height:60px;">
+              <div class="adv_name" style="margin:5px;">{{hero.name}}</div>
+            </div>
+            {% endfor %}
+          </div>          
         </div>
       </div>
       <div class="item item3">
@@ -385,68 +393,17 @@
           $('.adv').css({'background-image':'url(../static/img/test.png)', })
         })
 
+
         /* for loop gen and add mouse click event */
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        $('.gen_adv_container').append('\
-          <div class="gen_adv mybtn">\
-            <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
-            <div class="adv_name" style="margin:5px;">Addis</div>\
-          </div>\
-        ')   
-        
+        /*for( let i=0; i<=5; i++)
+        {
+          $('.gen_adv_container').append('\
+            <div class="gen_adv mybtn">\
+              <img src="../static/img/adventure/Addis.png" style="width:60px;height:60px;">\
+              <div class="adv_name" style="margin:5px;">Addis</div>\
+            </div>\
+          ')   
+        }*/
         $('.gen_adv').click(function () {
           alert('this is gen_adv')
         })
@@ -456,10 +413,26 @@
           <button class="gen_btn mybtn" id="gen_rarity_4"></button>\
           <button class="gen_btn mybtn" id="gen_rarity_5"></button>\
         ')                       /* 會動態變動button數量 */
+        // $('.gen_rarity_container').append('\
+        //   <button class="gen_btn mybtn" id="gen_rarity_2"></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_3"></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_4"></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_5"></button>\
+        // ')                       /* 會動態變動button數量 */
+        // $('.gen_rarity_container').append('\
+        //   <button class="gen_btn mybtn" id="gen_rarity_2"></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_3"></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_4></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_5></button>\
+        //   <button class="gen_btn mybtn" id="gen_rarity_6></button>\
+        // ')                       /* 會動態變動button數量 */
 
-        $('.mybtn').click(function () {
-          alert('hi')
+
+        $('.mybtn').click(function (e) {
+          alert( $(this).attr("id") )
         })
+
+        //addis_10_20_100.jpg
 
       })
     </script>
