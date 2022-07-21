@@ -26,21 +26,22 @@ def submit():
         user = request.form['user']
         print("post : user => ", user)
         FLAG = 'False'
-        if user == '18c04d299e34':
-            FLAG = 'True'
-        name = os.getcwd()
-        # with open('mac.txt', 'r') as f:
-            # lines = f.readlines()
-        # for item in lines:
-            # if user == item.split('\n')[0]:
-                # FLAG = 'True'
-                # break
         
-        return redirect(url_for('check', FLAG=FLAG, name=name))
+        # if user == '18c04d299e34':
+            # FLAG = 'True'
+        
+        with open('Might_Calculate/mac.txt', 'r') as f:
+            lines = f.readlines()
+        for item in lines:
+            if user == item.split('\n')[0]:
+                FLAG = 'True'
+                break
+        
+        return redirect(url_for('check', FLAG=FLAG))
 
-@app.route('/check/<FLAG>/<name>')
-def check(FLAG, name):
-    return '{}_{}'.format(FLAG, name)
+@app.route('/check/<FLAG>')
+def check(FLAG):
+    return '{}'.format(FLAG)
 
 
 
