@@ -28,6 +28,7 @@ def submit():
         FLAG = 'False'
         if user == '18c04d299e34':
             FLAG = 'True'
+        print(os.getcwd())
         # with open('mac.txt', 'r') as f:
             # lines = f.readlines()
         # for item in lines:
