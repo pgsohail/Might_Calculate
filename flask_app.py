@@ -28,7 +28,7 @@ def submit():
         FLAG = 'False'
         if user == '18c04d299e34':
             FLAG = 'True'
-        print(os.getcwd())
+        name = os.getcwd()
         # with open('mac.txt', 'r') as f:
             # lines = f.readlines()
         # for item in lines:
@@ -36,11 +36,11 @@ def submit():
                 # FLAG = 'True'
                 # break
         
-        return redirect(url_for('check', FLAG=FLAG))
+        return redirect(url_for('check', FLAG=FLAG, name=name))
 
-@app.route('/check/<FLAG>')
-def check(FLAG):
-    return '{}'.format(FLAG)
+@app.route('/check/<FLAG>/<name>')
+def check(FLAG, name):
+    return '{}_{}'.format(FLAG, name)
 
 
 
