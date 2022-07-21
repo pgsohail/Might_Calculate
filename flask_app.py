@@ -26,12 +26,14 @@ def submit():
         user = request.form['user']
         print("post : user => ", user)
         FLAG = 'False'
-        with open('mac.txt', 'r') as f:
-            lines = f.readlines()
-        for item in lines:
-            if user == item.split('\n')[0]:
-                FLAG = 'True'
-                break
+        if user == '18c04d299e34':
+            FLAG = 'True'
+        # with open('mac.txt', 'r') as f:
+            # lines = f.readlines()
+        # for item in lines:
+            # if user == item.split('\n')[0]:
+                # FLAG = 'True'
+                # break
         
         return redirect(url_for('check', FLAG=FLAG))
 
