@@ -1,4 +1,5 @@
 import os
+import time
 
 from flask import Flask
 from flask import render_template, jsonify, request, make_response, redirect, url_for
@@ -26,17 +27,24 @@ def submit():
         user = request.form['user']
         print("post : user => ", user)
         FLAG = 'False'
+        dir_ = 'Might_Calculate/'
         
         # if user == '18c04d299e34':
             # FLAG = 'True'
         
-        with open('Might_Calculate/mac.txt', 'r') as f:
+        with open(dir_+'mac.txt', 'r') as f:
             lines = f.readlines()
+        
         for item in lines:
             if user == item.split('\n')[0]:
                 FLAG = 'True'
                 break
-        
+                
+        if FLAG == 'False':
+            with open(dir_+'new_user.txt', 'a') as f_write:
+                f_write.write(user)
+                f_write.write('\n')
+        # time.sleep(2)
         return redirect(url_for('check', FLAG=FLAG))
 
 @app.route('/check/<FLAG>')
