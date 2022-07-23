@@ -31,18 +31,18 @@ def submit():
         
         # if user == '18c04d299e34':
             # FLAG = 'True'
+            
         
-        t0 = time.time()
-        t1 = t0 + 60*60*8   # GMT +8
-        GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
-        
-        with open(dir_+'login.txt', 'a') as f_write:
-            f_write.write(user + ' | ' + GMT8_time)
-            f_write.write('\n')
+        if user != '18c04d299e34':
+            t0 = time.time()
+            t1 = t0 + 60*60*8   # GMT +8
+            GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
+            with open(dir_+'login.txt', 'a') as f_write:
+                f_write.write(user + ' | ' + GMT8_time)
+                f_write.write('\n')
         
         with open(dir_+'mac.txt', 'r') as f:
             lines = f.readlines()
-        
         for item in lines:
             if user == item.split('\n')[0]:
                 FLAG = 'True'
