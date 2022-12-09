@@ -4,15 +4,161 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='travel.jpg') }}">
     <title>Document</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body>
-    <h1> Pyscript Test</h1>
+    <h2> 旅遊大亨機率試算 </h2>
+    <!-- <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-4">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-4">
+          One of two columns
+        </div>
+      </div>
+    </div> -->
+    <h4> 角色篇 </h4>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+      </div>
+      <input type="text" class="form-control" placeholder="請輸入整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="my_func()">開始模擬</button>
+      </div>
+    </div>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" style="width:120px"></th>
+          <th scope="col">機率</th>
+          <th scope="col" id="my_test">0</th>
+          <th scope="col">全部換算</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">鑽石數量</th>
+          <td></td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">髮飾</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">洋裝</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">杖</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">玫瑰</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">玫瑰圈(5個換1個A+素材包)</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4> 道具篇 </h4>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th scope="col" style="width:120px"></th>
+          <th scope="col">機率</th>
+          <th scope="col">0</th>
+          <th scope="col">全部換算</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">鑽石數量</th>
+          <td></td>
+          <td>0</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">A+修理箱</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">A+破碎道具</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+        <tr>
+          <th scope="row">A修理道具</th>
+          <td>0.0</td>
+          <td>0.0</td>
+          <td>0.0</td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+
+
     <py-script>
-print('this is python print')
-print('ho my god')
+def my_func():
+  Element('display').write("Hello")
+  #pyscript.write("my_test", "you clicked the button")
+
+  print('this is python print')
+
     </py-script>
   </body>
 </html>
