@@ -15,7 +15,9 @@ def hello_world():
 def gta():
     return "<p>gta key</p>"
 
-
+@app.route("/travel")
+def travel():
+    return render_template("travel.html")
 
 @app.route('/form')
 def formPage():
