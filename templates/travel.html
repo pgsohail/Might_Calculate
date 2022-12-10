@@ -7,11 +7,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{ url_for('static', filename='travel.jpg') }}">
-    <title>Document</title>
+    <title>旅遊大亨</title>
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
   </head>
   <body>
+
     <h2> 旅遊大亨機率試算 </h2>
     <!-- <div class="container">
       <div class="row justify-content-around">
@@ -52,55 +53,57 @@
         </div>
       </div>
     </div> -->
-    <h4> 角色篇 </h4>
+    <h4 id="title_a"> 角色機率試算 (1抽=?鑽) </h4>
+
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon1">模擬?抽</span>
       </div>
-      <input type="text" class="form-control" placeholder="請輸入整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+      <input type="text" id="input_int_a" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="my_func()">開始模擬</button>
+        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_a()">開始模擬</button>
       </div>
     </div>
-    <table class="table table-sm">
+
+    <table class="table table-sm" id="table_a">
       <thead>
         <tr>
           <th scope="col" style="width:120px"></th>
-          <th scope="col">機率</th>
-          <th scope="col" id="my_test">0</th>
-          <th scope="col">全部換算</th>
+          <th scope="col" style="width:70px">機率</th>
+          <th scope="col" style="width:100px" id="output_a">0</th>
+          <th scope="col" style="width:100px">全部換算</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">鑽石數量</th>
+          <th scope="row">鑽石消耗</th>
           <td></td>
-          <td>0</td>
+          <td id="diamond_a" bgcolor=#29FFF9>0</td>
           <td></td>
         </tr>
         <tr>
           <th scope="row">髮飾</th>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">洋裝</th>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">杖</th>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">玫瑰</th>
           <td>0.0</td>
           <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">玫瑰圈(5個換1個A+素材包)</th>
@@ -111,54 +114,58 @@
       </tbody>
     </table>
 
-    <h4> 道具篇 </h4>
-    <table class="table table-sm">
+
+    <h4 id="title_b"> 道具機率試算 (1抽=?鑽) </h4>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+      </div>
+      <input type="text" id="input_int_b" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_b()">開始模擬</button>
+      </div>
+    </div>
+
+    <table class="table table-sm" id="table_b">
       <thead>
         <tr>
           <th scope="col" style="width:120px"></th>
-          <th scope="col">機率</th>
-          <th scope="col">0</th>
-          <th scope="col">全部換算</th>
+          <th scope="col" style="width:70px">機率</th>
+          <th scope="col" style="width:200px" id="output_b">0</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">鑽石數量</th>
+          <th scope="row">鑽石消耗</th>
           <td></td>
-          <td>0</td>
-          <td></td>
+          <td id="diamond_b" bgcolor=#29FFF9>0</td>
         </tr>
         <tr>
           <th scope="row">A+修理箱</th>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">A+破碎道具</th>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
         <tr>
           <th scope="row">A修理道具</th>
           <td>0.0</td>
-          <td>0.0</td>
-          <td>0.0</td>
+          <td bgcolor=#ff6347>0.0</td>
         </tr>
       </tbody>
     </table>
     
 
+    <script>
+      function my_alert(my_str) {
+        alert(my_str);
+      }
+    </script>
 
-
-    <py-script>
-def my_func():
-  Element('display').write("Hello")
-  #pyscript.write("my_test", "you clicked the button")
-
-  print('this is python print')
-
-    </py-script>
+    <py-script src="{{ url_for('static', filename='travel.py') }}">  </py-script>
   </body>
 </html>

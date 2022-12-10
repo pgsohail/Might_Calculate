@@ -5,11 +5,11 @@ from flask import Flask
 from flask import render_template, jsonify, request, make_response, redirect, url_for
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
-@app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+# @app.route("/")
+# def hello_world():
+#     return "<p>Hello, World!</p>"
     
 @app.route("/gta")
 def gta():
