@@ -50,7 +50,7 @@ def calculate_a():
         tmp_str = '{:.2f}'.format(float(table_a.element.rows[6].cells[1].innerHTML) * int(input_int_a.element.value))
         table_a.element.rows[6].cells[2].innerHTML = tmp_str
 
-        tmp_str = '{:.2f}'.format(float(table_a.element.rows[2].cells[2].innerHTML) + (float(table_a.element.rows[6].celtable_als[2].innerHTML)/5) * material_a[0])
+        tmp_str = '{:.2f}'.format(float(table_a.element.rows[2].cells[2].innerHTML) + (float(table_a.element.rows[6].cells[2].innerHTML)/5) * material_a[0])
         table_a.element.rows[2].cells[3].innerHTML = tmp_str
         tmp_str = '{:.2f}'.format(float(table_a.element.rows[3].cells[2].innerHTML) + (float(table_a.element.rows[6].cells[2].innerHTML)/5) * material_a[1])
         table_a.element.rows[3].cells[3].innerHTML = tmp_str
