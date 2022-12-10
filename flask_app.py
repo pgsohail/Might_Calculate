@@ -17,6 +17,13 @@ def gta():
 
 @app.route("/travel")
 def travel():
+    dir_ = 'Might_Calculate/'
+    t0 = time.time()
+    t1 = t0 + 60*60*8   # GMT +8
+    GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
+    with open(dir_+'login_travel.txt', 'a') as f_write:
+        f_write.write(GMT8_time + '\n')
+    
     return render_template("travel.html")
 
 @app.route('/form')
