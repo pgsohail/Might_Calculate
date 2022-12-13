@@ -17,12 +17,13 @@ def gta():
 
 @app.route("/travel")
 def travel():
-    dir_ = 'Might_Calculate/'
-    t0 = time.time()
-    t1 = t0 + 60*60*8   # GMT +8
-    GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
-    with open(dir_+'login_travel.txt', 'a') as f_write:
-        f_write.write(GMT8_time + '\n')
+    if os.getcwd().find('GitHub') == -1:   # 路徑沒有GitHub字樣，代表在server上跑的。否則就是在local跑的
+        dir_ = 'Might_Calculate/'
+        t0 = time.time()
+        t1 = t0 + 60*60*8   # GMT +8
+        GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
+        with open(dir_+'login_travel.txt', 'a') as f_write:
+            f_write.write(GMT8_time + '\n')
     
     return render_template("travel.html")
 
@@ -84,7 +85,7 @@ def test(id):
     weapons = []
     dragons = []
     wps = []
-    for file_name in os.listdir('static/img/adventure_tmp'):
+    for file_name in os.listdir('Might_Calculate/static/img/adventure_tmp'):
         name, hp, str, might = file_name.split('_')
         might = might.split('.')[0]
         hero = {
@@ -96,7 +97,7 @@ def test(id):
         }
         heros.append(hero)
 
-    for file_name in os.listdir('static/img/weapon'):
+    for file_name in os.listdir('Might_Calculate/static/img/weapon'):
         # name, hp, str, might = file_name.split('_')
         # might = might.split('.')[0]
         # hero = {
@@ -108,7 +109,7 @@ def test(id):
         # }
         weapons.append(file_name)
     
-    for file_name in os.listdir('static/img/dragon'):
+    for file_name in os.listdir('Might_Calculate/static/img/dragon'):
         # name, hp, str, might = file_name.split('_')
         # might = might.split('.')[0]
         # hero = {
@@ -120,7 +121,7 @@ def test(id):
         # }
         dragons.append(file_name)
 
-    for file_name in os.listdir('static/img/wyrmprint'):
+    for file_name in os.listdir('Might_Calculate/static/img/wyrmprint'):
         # name, hp, str, might = file_name.split('_')
         # might = might.split('.')[0]
         # hero = {
