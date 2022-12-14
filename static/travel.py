@@ -22,7 +22,7 @@ diamond_b_per_num = 20
 material_b = []
 table_b.element.rows[2].cells[1].innerHTML = "0.0"
 table_b.element.rows[3].cells[1].innerHTML = "0.0065"
-table_b.element.rows[4].cells[1].innerHTML = "0.013"
+table_b.element.rows[4].cells[1].innerHTML = "0.13"
 
 title_a.element.innerHTML = '角色機率試算 (1抽={}鑽)'.format(diamond_a_per_num)
 title_b.element.innerHTML = '道具機率試算 (1抽={}鑽)'.format(diamond_b_per_num)
