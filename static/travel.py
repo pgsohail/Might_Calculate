@@ -20,9 +20,9 @@ diamond_b = Element('diamond_b')
 table_b = Element('table_b')
 diamond_b_per_num = 20
 material_b = []
-table_b.element.rows[2].cells[1].innerHTML = "0.019"
-table_b.element.rows[3].cells[1].innerHTML = "0.033"
-table_b.element.rows[4].cells[1].innerHTML = "0.04"
+table_b.element.rows[2].cells[1].innerHTML = "0.0"
+table_b.element.rows[3].cells[1].innerHTML = "0.0065"
+table_b.element.rows[4].cells[1].innerHTML = "0.013"
 
 title_a.element.innerHTML = '角色機率試算 (1抽={}鑽)'.format(diamond_a_per_num)
 title_b.element.innerHTML = '道具機率試算 (1抽={}鑽)'.format(diamond_b_per_num)
@@ -31,7 +31,7 @@ def calculate_a():
   if input_int_a.element.value:
     if input_int_a.element.value.isnumeric():
       if int(input_int_a.element.value) >= 1 and int(input_int_a.element.value) <= 10000:
-        output_a.write(input_int_a.element.value)
+        # output_a.write(input_int_a.element.value)
         diamond_a.write(str(int(input_int_a.element.value)*diamond_a_per_num))
 
         # try:
@@ -70,7 +70,7 @@ def calculate_b():
   if input_int_b.element.value:
     if input_int_b.element.value.isnumeric():
       if int(input_int_b.element.value) >= 1 and int(input_int_b.element.value) <= 10000:
-        output_b.write(input_int_b.element.value)
+        # output_b.write(input_int_b.element.value)
         diamond_b.write(str(int(input_int_b.element.value)*diamond_b_per_num))
 
         tmp_str = '{:.2f}'.format(float(table_b.element.rows[2].cells[1].innerHTML) * int(input_int_b.element.value))
@@ -79,6 +79,9 @@ def calculate_b():
         table_b.element.rows[3].cells[2].innerHTML = tmp_str
         tmp_str = '{:.2f}'.format(float(table_b.element.rows[4].cells[1].innerHTML) * int(input_int_b.element.value))
         table_b.element.rows[4].cells[2].innerHTML = tmp_str
+
+        tmp_str = '{:.2f}'.format(float(table_b.element.rows[3].cells[2].innerHTML)/5.0 + float(table_b.element.rows[4].cells[2].innerHTML)/25.0)
+        table_b.element.rows[2].cells[3].innerHTML = tmp_str
 
       else:
         my_alert('請輸入1~10000之間的整數')
