@@ -1,5 +1,12 @@
 from js import my_alert
 
+all_1 = Element('all_1')
+all_2 = Element('all_2')
+
+nav_tab_a = Element('nav_tab_a')
+nav_tab_b = Element('nav_tab_b')
+nav_tab_c = Element('nav_tab_c')
+
 title_a = Element('title_a')
 input_int_a = Element('input_int_a')
 output_a = Element('output_a')
@@ -89,3 +96,23 @@ def calculate_b():
       my_alert('請輸入1~10000之間的整數')
   else:
     my_alert('請輸入1~10000之間的整數')
+
+  
+def tab_a():
+  if nav_tab_a.element.className == 'nav-link':
+    nav_tab_a.element.setAttribute('class', 'nav-link active')
+    nav_tab_b.element.setAttribute('class', 'nav-link')
+    # nav_tab_c.element.setAttribute('class', 'nav-link')
+    all_1.element.style.display = 'block'
+    all_2.element.style.display = 'none'
+
+def tab_b():
+  if nav_tab_b.element.className == 'nav-link':
+    nav_tab_b.element.setAttribute('class', 'nav-link active')
+    nav_tab_a.element.setAttribute('class', 'nav-link')
+    # nav_tab_c.element.setAttribute('class', 'nav-link')
+    all_1.element.style.display = 'none'
+    all_2.element.style.display = 'block'
+
+def test():
+  print('JHI')

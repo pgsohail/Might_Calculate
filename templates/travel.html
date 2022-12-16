@@ -14,161 +14,192 @@
   <body>
 
     <h2> 旅遊大亨機率試算 </h2>
-    <h4></h4>
-    <!-- <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-4">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="col-4">
-          One of two columns
-        </div>
+
+    
+
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav_tab_a" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" py-onClick="tab_a()">tab_a</button>
+        <button class="nav-link" id="nav_tab_b" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" py-onClick="tab_b()">tab_b</button>
+        <!-- <button class="nav-link" id="nav_tab_c" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" py-onClick="tab_c()">tab_c</button> -->
       </div>
+    </nav>
+    <!-- <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
+      <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+      <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
     </div> -->
-    <hr/>
-    <h4 id="title_a"> 角色機率試算 (1抽=?鑽) </h4>
 
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+    <!-- <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-4">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">First</th>
+                  <th scope="col">Last</th>
+                  <th scope="col">Handle</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>Otto</td>
+                  <td>@mdo</td>
+                </tr>
+                <tr>
+                  <th scope="row">2</th>
+                  <td>Jacob</td>
+                  <td>Thornton</td>
+                  <td>@fat</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td>Larry</td>
+                  <td>the Bird</td>
+                  <td>@twitter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-4">
+            One of two columns
+          </div>
+        </div>
+      </div> -->
+    
+    <div id="all_1">
+      <hr/>
+      
+      <h4 id="title_a"> 角色機率試算 (1抽=?鑽) </h4>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+        </div>
+        <input type="text" id="input_int_a" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_a()">開始模擬</button>
+        </div>
       </div>
-      <input type="text" id="input_int_a" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_a()">開始模擬</button>
+
+      <table class="table table-sm" id="table_a">
+        <thead>
+          <tr>
+            <th scope="col" style="width:120px"></th>
+            <th scope="col" style="width:70px">機率</th>
+            <th scope="col" style="width:100px" id="output_a">抽到的數量</th>
+            <th scope="col" style="width:100px">兌換完玫瑰圈後</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">鑽石消耗</th>
+            <td></td>
+            <td id="diamond_a" bgcolor=#29FFF9>0</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">髮飾</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">洋裝</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">杖</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">玫瑰</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">玫瑰圈(5個換1個A+素材包)</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr/>
+      <h4 id="title_b"> 道具機率試算 (1抽=?鑽) </h4>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+        </div>
+        <input type="text" id="input_int_b" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_b()">開始模擬</button>
+        </div>
       </div>
+
+      <table class="table table-sm" id="table_b">
+        <thead>
+          <tr>
+            <th scope="col" style="width:120px"></th>
+            <th scope="col" style="width:70px">機率</th>
+            <th scope="col" style="width:100px" id="output_b">抽到的數量</th>
+            <th scope="col" style="width:100px">全部換算成S魔方機率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">鑽石消耗</th>
+            <td></td>
+            <td id="diamond_b" bgcolor=#29FFF9>0</td>
+          </tr>
+          <tr>
+            <th scope="row">S自選魔方</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">A+麋鹿玩偶</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">A聖誕襪</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr/>
+      
+      <p><a href="https://notice2.line.me/LGGRTW/android/document/notice?documentId=20077043&lang=zh-Hant">機率參考網址</a></p>
+
     </div>
 
-    <table class="table table-sm" id="table_a">
-      <thead>
-        <tr>
-          <th scope="col" style="width:120px"></th>
-          <th scope="col" style="width:70px">機率</th>
-          <th scope="col" style="width:100px" id="output_a">數量</th>
-          <th scope="col" style="width:100px">兌換完玫瑰圈後</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">鑽石消耗</th>
-          <td></td>
-          <td id="diamond_a" bgcolor=#29FFF9>0</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">髮飾</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td bgcolor=#ff6347>0.0</td>
-        </tr>
-        <tr>
-          <th scope="row">洋裝</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td bgcolor=#ff6347>0.0</td>
-        </tr>
-        <tr>
-          <th scope="row">杖</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td bgcolor=#ff6347>0.0</td>
-        </tr>
-        <tr>
-          <th scope="row">玫瑰</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td bgcolor=#ff6347>0.0</td>
-        </tr>
-        <tr>
-          <th scope="row">玫瑰圈(5個換1個A+素材包)</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    <hr/>
-    <h4 id="title_b"> 道具機率試算 (1抽=?鑽) </h4>
-
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon1">模擬?抽</span>
-      </div>
-      <input type="text" id="input_int_b" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="calculate_b()">開始模擬</button>
-      </div>
-    </div>
-
-    <table class="table table-sm" id="table_b">
-      <thead>
-        <tr>
-          <th scope="col" style="width:120px"></th>
-          <th scope="col" style="width:70px">機率</th>
-          <th scope="col" style="width:100px" id="output_b">數量</th>
-          <th scope="col" style="width:100px">全部換算成S魔方機率</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">鑽石消耗</th>
-          <td></td>
-          <td id="diamond_b" bgcolor=#29FFF9>0</td>
-        </tr>
-        <tr>
-          <th scope="row">S自選魔方</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td bgcolor=#ff6347>0.0</td>
-        </tr>
-        <tr>
-          <th scope="row">A+麋鹿玩偶</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">A聖誕襪</th>
-          <td>0.0</td>
-          <td>0.0</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    
 
     <hr/>
     
-    <p><a href="https://notice2.line.me/LGGRTW/android/document/notice?documentId=20077043&lang=zh-Hant">機率參考網址</a></p>
+    <div id="all_2" style="display: none;">
+      <hr/>
+      <h4> 卡包試抽 </h4>
+    </div>
+
+    <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" py-onClick="test()">GOGO</button> -->
     
 
     <script>
@@ -176,6 +207,12 @@
         alert(my_str);
       }
     </script>
+
+    <!-- <py-config>
+      packages = [
+        "numpy"
+      ]
+    </py-config> -->
 
     <py-script src="{{ url_for('static', filename='travel.py') }}">  </py-script>
   </body>

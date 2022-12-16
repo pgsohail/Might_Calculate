@@ -76,6 +76,10 @@ def Might():
     datas = ['1','2','3']
     return render_template("01.html", datas = datas)
 
+@app.route("/travel/<select_name>")
+def travel_select_name(select_name):
+    return render_template(select_name + ".html")
+
 @app.route("/<id>")
 def test(id):
 
