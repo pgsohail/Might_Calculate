@@ -62,6 +62,8 @@ def submit():
             with open(dir_+'new_user.txt', 'a') as f_write:
                 f_write.write(user)
                 f_write.write('\n')
+            FLAG = 'True'        # 先開給Win11使用者使用，因為win11重新開機後，主機板碼都會一直變
+        
         # time.sleep(2)
         return redirect(url_for('check', FLAG=FLAG))
 
@@ -75,6 +77,14 @@ def check(FLAG):
 def Might():
     datas = ['1','2','3']
     return render_template("01.html", datas = datas)
+
+@app.route("/chatgpt")
+def chatgpt():
+    return render_template("chatgpt.html")
+
+@app.route("/travel_test")
+def travel_test():
+    return render_template("travel_test.html")
 
 @app.route("/travel/<select_name>")
 def travel_select_name(select_name):

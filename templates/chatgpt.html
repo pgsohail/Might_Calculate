@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/reset.css')}}">
+  <title>Document</title>
+
+</head>
+<body>
+  <div id="table-container"></div>
+
+  <script>
+    // Create the table element
+    var table = document.createElement("table");
+    table.setAttribute("class", "table table-bordered");
+  
+    // Create the table body
+    var tbody = document.createElement("tbody");
+    table.appendChild(tbody);
+  
+    // Create rows and cells
+    for (var i = 0; i < 6; i++) {
+      var row = document.createElement("tr");
+      for (var j = 0; j < 4; j++) {
+        var cell = document.createElement("td");
+        cell.innerHTML = "Cell " + (j + 1);
+        row.appendChild(cell);
+      }
+      tbody.appendChild(row);
+    }
+  
+    // Add the table to the container element
+    var tableContainer = document.getElementById("table-container");
+    tableContainer.appendChild(table);
+  
+    // Create the button element
+    var button = document.createElement("button");
+    button.setAttribute("class", "btn btn-primary");
+    button.innerHTML = "Click me";
+  
+    // Create the text input element
+    var input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("placeholder", "Enter text here");
+  
+    // Append the button and text input to the container
+    tableContainer.appendChild(button);
+    tableContainer.appendChild(input);
+  
+  </script>
+  
+</body>
+</html>

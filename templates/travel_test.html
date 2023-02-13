@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='travel.jpg') }}">
+    <title>旅遊大亨機率試算</title>
+  </head>
+  <body>
+
+    <h2> 旅遊大亨機率試算 </h2>
+
+    
+    <nav>
+      <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link active" id="nav_tab_a" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true" onclick="tab_a()">tab_a</button>
+        <button class="nav-link" id="nav_tab_b" data-toggle="tab" data-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false" onclick="tab_b()">tab_b</button>
+        <!-- <button class="nav-link" id="nav_tab_c" data-toggle="tab" data-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false" onclick="tab_c()">tab_c</button> -->
+      </div>
+    </nav>
+
+    
+    <div id="all_1">
+      <hr/>
+      
+      <h4 id="title_a"> 角色機率試算 (1抽=?鑽) </h4>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+        </div>
+        <input type="text" id="input_int_a" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" onclick="calculate_a()">開始模擬</button>
+        </div>
+      </div>
+
+      <table class="table table-sm" id="table_a">
+        <thead>
+          <tr>
+            <th scope="col" style="width:120px"></th>
+            <th scope="col" style="width:70px">機率</th>
+            <th scope="col" style="width:100px" id="output_a">抽到的數量</th>
+            <th scope="col" style="width:100px">兌換完玫瑰圈後</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">鑽石消耗</th>
+            <td></td>
+            <td id="diamond_a" bgcolor=#29FFF9>0</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">髮飾</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">洋裝</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">杖</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">玫瑰</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">玫瑰圈(5個換1個A+素材包)</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <hr/>
+      <h4 id="title_b"> 道具機率試算 (1抽=?鑽) </h4>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">模擬?抽</span>
+        </div>
+        <input type="text" id="input_int_b" class="form-control" placeholder="請輸入1~10000整數" aria-label="請輸入整數" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" onclick="calculate_b()">開始模擬</button>
+        </div>
+      </div>
+
+      <table class="table table-sm" id="table_b">
+        <thead>
+          <tr>
+            <th scope="col" style="width:120px"></th>
+            <th scope="col" style="width:70px">機率</th>
+            <th scope="col" style="width:100px" id="output_b">抽到的數量</th>
+            <th scope="col" style="width:100px">全部換算成S魔方機率</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">鑽石消耗</th>
+            <td></td>
+            <td id="diamond_b" bgcolor=#29FFF9>0</td>
+          </tr>
+          <tr>
+            <th scope="row">S自選魔方</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td bgcolor=#ff6347>0.0</td>
+          </tr>
+          <tr>
+            <th scope="row">A+麋鹿玩偶</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">A聖誕襪</th>
+            <td>0.0</td>
+            <td>0.0</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr/>
+      
+      <p><a href="https://notice2.line.me/LGGRTW/android/document/notice?documentId=20077043&lang=zh-Hant">機率參考網址</a></p>
+
+    </div>
+
+    
+
+    <hr/>
+    
+    <div id="all_2" style="display: none;">
+      <hr/>
+      <h4> 卡包試抽 </h4>
+    </div>
+
+    <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04" onclick="test()">GOGO</button> -->
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script>
+      // function my_alert(my_str) {
+      //   alert(my_str);
+      // }
+      function tab_a() {
+        alert('I am tab_a');
+      }
+      function tab_b() {
+        alert('I am tab_b');
+      }
+      function calculate_a() {
+        alert('I am calculate_a');
+      }
+      function calculate_b() {
+        var content = $("#title_a").html();
+        alert(content);
+      }
+      
+      $(document).ready(function() {
+        var content = $("#table_a").html();
+        alert(content);
+        //$('#table_a').rows[2].cells[1].html('0.001');
+      });
+    </script>
+
+  </body>
+</html>
