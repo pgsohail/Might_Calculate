@@ -34,6 +34,8 @@ def formPage():
 @app.route('/submit', methods=['POST', 'GET'])
 def submit():
     if request.method == 'POST':
+        print(request.form)
+        print(type(request.form))
         user = request.form['user']
         print("post : user => ", user)
         FLAG = 'False'
