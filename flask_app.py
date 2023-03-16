@@ -38,14 +38,23 @@ def submit():
         print(type(request.form))
         
         
+        if request.form.has_key('user'):
+            user = request.form['user']
+            print("post : user => ", user)
+        else:
+            print('no user key')
         
-        user = request.form['user']
-        print("post : user => ", user)
-        
-        test = request.form['test']
-        print("post : test => ", test)
-        status = request.form['status']
-        print("post : status => ", status)
+        if request.form.has_key('test'):
+            test = request.form['test']
+            print("post : test => ", test)
+        else:
+            print('no test key')
+            
+        if request.form.has_key('status'):
+            status = request.form['status']
+            print("post : status => ", status)
+        else:
+            print('no status key')
         
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
