@@ -37,6 +37,9 @@ def submit():
         print(request.form)
         print(type(request.form))
         
+        my_dict = request.form.to_dict()
+        print(my_dict)
+        
         
         if request.form.has_key('user'):
             user = request.form['user']
