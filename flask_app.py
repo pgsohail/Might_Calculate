@@ -34,11 +34,11 @@ def formPage():
 @app.route('/submit', methods=['POST', 'GET'])
 def submit():
     if request.method == 'POST':
-        print(request.form)
-        print(type(request.form))
+        #print(request.form)                 # ImmutableMultiDict([('user', '1027f5a0ad77'), ('status', 'login')])
+        #print(type(request.form))           # <class 'werkzeug.datastructures.ImmutableMultiDict'>
         
         my_dict = request.form.to_dict()
-        print(my_dict)
+        #print(my_dict)
         
         
         if 'user' in my_dict.keys():
@@ -46,32 +46,27 @@ def submit():
             print("post : user => ", user)
         else:
             print('no user key')
-        
-        if 'test' in my_dict.keys():
-            test = my_dict['test']
-            print("post : test => ", test)
-        else:
-            print('no test key')
             
         if 'status' in my_dict.keys():
             status = my_dict['status']
             print("post : status => ", status)
         else:
+            status = 'None'
             print('no status key')
         
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
         
-        # if user == '18c04d299e34':
+        # if user == '1027f5a0ad77':
             # FLAG = 'True'
             
         
-        if user != '18c04d299e34':
+        if user != '1027f5a0ad77':
             t0 = time.time()
             t1 = t0 + 60*60*8   # GMT +8
             GMT8_time = time.strftime("%Y/%m/%d %H:%M:%S", time.gmtime(t1))
             with open(dir_+'login.txt', 'a') as f_write:
-                f_write.write(user + ' | ' + GMT8_time)
+                f_write.write(user + ' | ' + GMT8_time + ' | ' + status)
                 f_write.write('\n')
         
         with open(dir_+'mac.txt', 'r') as f:
@@ -85,7 +80,7 @@ def submit():
             with open(dir_+'new_user.txt', 'a') as f_write:
                 f_write.write(user)
                 f_write.write('\n')
-            FLAG = 'True'        # 先開給Win11使用者使用，因為win11重新開機後，主機板碼都會一直變
+            FLAG = 'True'        # 先開給Win11使用者使用，因為win11重新開機後，mac addr都會一直變
         
         # time.sleep(2)
         return redirect(url_for('check', FLAG=FLAG))
