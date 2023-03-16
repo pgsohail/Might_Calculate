@@ -37,12 +37,16 @@ def submit():
         print(request.form)
         print(type(request.form))
         
+        
+        
         user = request.form['user']
         print("post : user => ", user)
-        status = request.form['status']
-        print("post : status => ", status)
+        
         test = request.form['test']
         print("post : test => ", test)
+        status = request.form['status']
+        print("post : status => ", status)
+        
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
         
