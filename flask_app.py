@@ -41,20 +41,20 @@ def submit():
         print(my_dict)
         
         
-        if request.form.has_key('user'):
-            user = request.form['user']
+        if 'user' in my_dict.keys():
+            user = my_dict['user']
             print("post : user => ", user)
         else:
             print('no user key')
         
-        if request.form.has_key('test'):
-            test = request.form['test']
+        if 'test' in my_dict.keys():
+            test = my_dict['test']
             print("post : test => ", test)
         else:
             print('no test key')
             
-        if request.form.has_key('status'):
-            status = request.form['status']
+        if 'status' in my_dict.keys():
+            status = my_dict['status']
             print("post : status => ", status)
         else:
             print('no status key')
