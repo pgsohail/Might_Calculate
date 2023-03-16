@@ -36,8 +36,13 @@ def submit():
     if request.method == 'POST':
         print(request.form)
         print(type(request.form))
+        
         user = request.form['user']
         print("post : user => ", user)
+        status = request.form['status']
+        print("post : status => ", status)
+        test = request.form['test']
+        print("post : test => ", test)
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
         
