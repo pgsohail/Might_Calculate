@@ -80,7 +80,7 @@ def submit():
             with open(dir_+'new_user.txt', 'a') as f_write:
                 f_write.write(user)
                 f_write.write('\n')
-            FLAG = 'True'        # 先開給Win11使用者使用，因為win11重新開機後，mac addr都會一直變
+            # FLAG = 'True'        # 先開給Win11使用者使用，因為win11重新開機後，mac addr都會一直變
         
         # time.sleep(2)
         return redirect(url_for('check', FLAG=FLAG))
