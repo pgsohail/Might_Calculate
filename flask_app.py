@@ -53,6 +53,16 @@ def submit():
         else:
             status = 'None'
             print('no status key')
+            
+        if 'version' in my_dict.keys():
+            version = my_dict['version']
+            print("post : version => ", version)
+        else:
+            version = 'None'
+            print('no version key')
+            
+        if version == 'V_23_1':
+            return redirect(url_for('check', FLAG='False'))
         
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
