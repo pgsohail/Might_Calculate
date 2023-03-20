@@ -62,7 +62,7 @@ def submit():
             print('no version key')
             
         if version == 'V_23_1':
-            return redirect(url_for('check', FLAG='False'))
+            return redirect(url_for('check', FLAG='version_error'))
         
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
