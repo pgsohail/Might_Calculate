@@ -40,6 +40,9 @@ def submit():
         my_dict = request.form.to_dict()
         #print(my_dict)
         
+        FLAG = 'False'
+        dir_ = 'Might_Calculate/'
+        
         
         if 'user' in my_dict.keys():
             user = my_dict['user']
@@ -62,7 +65,7 @@ def submit():
             version = 'None'
             #print('no version key')
             
-        with open('valid_version.txt', 'r') as f:
+        with open(dir_+'valid_version.txt', 'r') as f:
             valid_version_lines = f.readlines()
             
         version_check = False
@@ -76,8 +79,7 @@ def submit():
             
         print(f'user: {user}, status: {status}, version: {version}')
         
-        FLAG = 'False'
-        dir_ = 'Might_Calculate/'
+        
         
         # if user == '1027f5a0ad77':
             # FLAG = 'True'
