@@ -43,26 +43,38 @@ def submit():
         
         if 'user' in my_dict.keys():
             user = my_dict['user']
-            print("post : user => ", user)
+            #print("post : user => ", user)
         else:
-            print('no user key')
+            user = 'None'
+            #print('no user key')
             
         if 'status' in my_dict.keys():
             status = my_dict['status']
-            print("post : status => ", status)
+            #print("post : status => ", status)
         else:
             status = 'None'
-            print('no status key')
+            #print('no status key')
             
         if 'version' in my_dict.keys():
             version = my_dict['version']
-            print("post : version => ", version)
+            #print("post : version => ", version)
         else:
             version = 'None'
-            print('no version key')
+            #print('no version key')
             
-        if version == 'V_23_1':
+        with open('valid_version.txt', 'r') as f:
+            valid_version_lines = f.readlines()
+            
+        version_check = False
+        for line in valid_version_lines:
+            if version == line.strip():
+                version_check = True
+            
+        if version_check == False:
+            print('version: ' + version)
             return redirect(url_for('check', FLAG='version_error'))
+            
+        print(f'user: {user}, status: {status}, version: {version}')
         
         FLAG = 'False'
         dir_ = 'Might_Calculate/'
